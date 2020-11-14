@@ -3,10 +3,10 @@ FROM node:14-alpine
 
 LABEL maintainer "Scott Mathieson <scott@eingress.io>"
 
-RUN apk --update --no-cache add curl g++ make python && \
-	npm install --global --unsafe-perm=true pouchdb-server && \
+RUN apk --update --no-cache --virtual .build-deps add curl g++ make python && \
+	npm install --global --production --unsafe-perm=true pouchdb-server && \
 	rm -rf /root/.[^.]* && \
-	apk del g++ make python
+	apk del .build-deps
 
 ADD add-admin.sh /bin/add-admin
 ADD add-user.sh /bin/add-user
