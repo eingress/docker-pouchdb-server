@@ -1,5 +1,6 @@
 
 FROM node:14-alpine
+
 LABEL maintainer "Scott Mathieson <scott@eingress.io>"
 
 RUN apk --update --no-cache add curl g++ make python && \
