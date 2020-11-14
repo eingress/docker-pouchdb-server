@@ -7,7 +7,7 @@ SHELL := /bin/bash
 .PHONY: build push release
 
 build:
-	docker build \
+	docker build --squash \
 		-t $$IMAGE_NAME:$$IMAGE_VERSION \
 		-t $$IMAGE_NAME:latest \
 		.
