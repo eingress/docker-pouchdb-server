@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC2120
 
 # no sha256sum on mac
 _sha256sum() {
