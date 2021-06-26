@@ -1,5 +1,5 @@
 
-FROM node:14-alpine
+FROM node:16-alpine
 
 LABEL maintainer "Scott Mathieson <scott@eingress.io>"
 
