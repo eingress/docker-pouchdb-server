@@ -4,7 +4,7 @@ FROM node:18-alpine
 LABEL maintainer "Scott Mathieson <scott@eingress.io>"
 
 RUN apk --update --no-cache --virtual .build-deps add curl g++ make && \
-	npm install --global --production --unsafe-perm=true pouchdb-server && \
+	npm install --global --omit=dev --unsafe-perm=true pouchdb-server && \
 	rm -rf /root/.[^.]* && \
 	apk del .build-deps
 
