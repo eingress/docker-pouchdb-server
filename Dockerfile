@@ -1,5 +1,7 @@
 
-FROM node:18-alpine
+ARG NODE_IMAGE_VERSION
+
+FROM node:$NODE_IMAGE_VERSION
 
 LABEL maintainer "Scott Mathieson <scott@eingress.io>"
 
