@@ -1,9 +1,9 @@
 
 ARG NODE_IMAGE_VERSION
 
-FROM node:$NODE_IMAGE_VERSION
+FROM node:${NODE_IMAGE_VERSION:-22-alpine}
 
-LABEL maintainer "Scott Mathieson <scott@eingress.io>"
+LABEL maintainer="Scott Mathieson <scott@eingress.io>"
 
 RUN apk --update --no-cache --virtual .build-deps add curl g++ make && \
 	npm install --global --omit=dev --unsafe-perm=true pouchdb-server && \
